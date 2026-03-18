@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
+import { Sparkles } from 'lucide-react';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -142,10 +143,16 @@ const Dashboard = () => {
                         </div>
                     </Card>
 
-                    <Card title="AI Insights" className="insight-card">
-                        <div className="insight-item">
-                            <span className="insight-icon">💡</span>
-                            <p>{data.insight}</p>
+                    <Card title="AI Financial Insights" className="insight-card">
+                        <div className="insight-content">
+                            <div className="insight-item">
+                                <span className="insight-icon"><Sparkles size={24} color="#2563eb" /></span>
+                                <p>{data.insight}</p>
+                            </div>
+                            <div className="gemini-badge">
+                                <span className="badge-dot"></span>
+                                <span>Powered by Google Gemini</span>
+                            </div>
                         </div>
                     </Card>
                 </div>
