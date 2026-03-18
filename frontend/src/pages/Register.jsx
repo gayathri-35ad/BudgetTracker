@@ -19,14 +19,17 @@ const Register = ({ onRegister, onSwitchToLogin }) => {
         setError('');
         setLoading(true);
         try {
-            await api.post('users/register/', {
+            const response = await api.post('users/register/', {
                 username: formData.username,
                 email: formData.email,
                 password: formData.password,
             });
-            // Auto login or redirect to login
-            onSwitchToLogin();
-            alert('Registration successful! Please login.');
+
+            // Store tokens for auto-login
+            localStorage.setItem('access_token', response.data.access);
+            localStorage.setItem('refresh_token', response.data.refresh);
+
+            onRegister();
         } catch (err) {
             const errorData = err.response?.data;
             let errorMessage = 'Registration failed. Please try again.';
