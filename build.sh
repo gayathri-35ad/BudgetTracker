@@ -5,6 +5,7 @@ set -o errexit
 # Build frontend
 echo "Building Frontend..."
 cd frontend
+rm -rf dist
 npm install
 npm run build
 cd ..
