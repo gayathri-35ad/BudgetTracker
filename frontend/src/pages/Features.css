@@ -1,0 +1,206 @@
+.feature-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.budget-numbers {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.spent-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.limit-amount {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.progress-bar-large {
+    height: 12px;
+    background-color: var(--bg-main);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.budget-status {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.goal-card {
+    text-align: center;
+}
+
+.goal-icon-large {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.goal-progress {
+    margin: 1.5rem 0;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.mock-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 100%;
+    padding-bottom: 1rem;
+    gap: 1rem;
+}
+
+.bar-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 100%;
+    flex: 1;
+}
+
+.bar {
+    width: 50%;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s;
+}
+
+.bar.income {
+    background-color: var(--success);
+    opacity: 0.8;
+}
+
+.bar.expense {
+    background-color: var(--danger);
+    opacity: 0.8;
+}
+
+.mock-pie-chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--success) 0% 35%,
+            var(--primary) 35% 60%,
+            var(--warning) 60% 80%,
+            var(--danger) 80% 100%);
+    margin: 0 auto 1.5rem;
+}
+
+.chart-placeholder.large {
+    height: 350px;
+}
+
+.pie-legend {
+    list-style: none;
+    font-size: 0.875rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.pie-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.food {
+    background-color: var(--success);
+}
+
+.dot.shop {
+    background-color: var(--primary);
+}
+
+.dot.ent {
+    background-color: var(--warning);
+}
+
+.dot.other {
+    background-color: var(--danger);
+}
+
+.grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.subscription-item-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.s-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.s-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-main);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.s-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.s-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.s-price {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.renewal-alert {
+    padding: 1rem;
+    background-color: rgba(37, 99, 235, 0.1);
+    border-radius: var(--radius);
+    color: var(--primary);
+}
