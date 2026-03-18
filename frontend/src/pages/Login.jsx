@@ -3,6 +3,7 @@ import Card from '../components/common/Card';
 import Input from '../components/common/Input';
 import Button from '../components/common/Button';
 import api from '../services/api';
+import { Mail, Lock, Chrome, Apple as AppleIcon } from 'lucide-react';
 
 
 const Login = ({ onLogin, onSwitchToRegister }) => {
@@ -47,6 +48,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             required
+                            icon={<Mail size={18} />}
                         />
                         <Input
                             label="Password"
@@ -55,6 +57,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                             required
+                            icon={<Lock size={18} />}
                         />
                         <div className="auth-options">
                             <label className="checkbox-container">
@@ -71,8 +74,14 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
                     <div className="social-auth">
                         <p className="divider"><span>Or continue with</span></p>
                         <div className="social-grid">
-                            <button className="social-btn">Google</button>
-                            <button className="social-btn">Apple</button>
+                            <button className="social-btn" type="button">
+                                <Chrome size={18} />
+                                <span>Google</span>
+                            </button>
+                            <button className="social-btn" type="button">
+                                <AppleIcon size={18} />
+                                <span>Apple</span>
+                            </button>
                         </div>
                     </div>
 

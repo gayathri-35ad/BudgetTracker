@@ -96,16 +96,26 @@
 }
 
 .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     padding: 0.75rem;
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    background-color: var(--bg-card);
+    color: var(--text-main);
     font-weight: 500;
     font-size: 0.875rem;
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
 .social-btn:hover {
     background-color: var(--bg-main);
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .auth-footer {
