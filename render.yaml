@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: smartbudget-unified
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn --pythonpath backend core.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: smartbudget-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "smartbudget-unified.onrender.com" # Update after first deploy
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
+databases:
+  - name: smartbudget-db
+    plan: free
