@@ -103,3 +103,37 @@ textarea {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
+
+/* Unified Layout System */
+.page-container-fluid,
+.feature-container,
+.dashboard-container,
+.add-transaction-container,
+.reports-container,
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.stretch-grid,
+.feature-grid,
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
