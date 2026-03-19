@@ -1,16 +1,27 @@
-import React from 'react';
 import './Sidebar.css';
+import {
+    LayoutDashboard,
+    Receipt,
+    Wallet,
+    Calendar,
+    Target,
+    Tv,
+    BarChart3,
+    User,
+    Moon,
+    Sun
+} from 'lucide-react';
 
 const Sidebar = ({ currentPage, setCurrentPage, theme, toggleTheme }) => {
     const menuItems = [
-        { name: 'Dashboard', icon: '📊' },
-        { name: 'Expenses', icon: '💸' },
-        { name: 'Income', icon: '💰' },
-        { name: 'Budget Management', icon: '📅' },
-        { name: 'Savings Goals', icon: '🚀' },
-        { name: 'Subscriptions', icon: '📺' },
-        { name: 'Reports', icon: '📈' },
-        { name: 'Profile', icon: '👤' },
+        { name: 'Dashboard', icon: <LayoutDashboard size={20} /> },
+        { name: 'Expenses', icon: <Receipt size={20} /> },
+        { name: 'Income', icon: <Wallet size={20} /> },
+        { name: 'Budget Management', icon: <Calendar size={20} /> },
+        { name: 'Savings Goals', icon: <Target size={20} /> },
+        { name: 'Subscriptions', icon: <Tv size={20} /> },
+        { name: 'Reports', icon: <BarChart3 size={20} /> },
+        { name: 'Profile', icon: <User size={20} /> },
     ];
 
     return (
@@ -33,7 +44,17 @@ const Sidebar = ({ currentPage, setCurrentPage, theme, toggleTheme }) => {
             </nav>
             <div className="sidebar-footer">
                 <button className="theme-toggle" onClick={toggleTheme}>
-                    <span>{theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}</span>
+                    {theme === 'light' ? (
+                        <>
+                            <Moon size={16} />
+                            <span>Dark Mode</span>
+                        </>
+                    ) : (
+                        <>
+                            <Sun size={16} />
+                            <span>Light Mode</span>
+                        </>
+                    )}
                 </button>
             </div>
         </aside>
