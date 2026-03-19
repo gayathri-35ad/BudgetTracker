@@ -1,7 +1,24 @@
-.feature-container {
+.feature-container,
+.dashboard-container,
+.add-transaction-container,
+.reports-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .page-header {
@@ -10,7 +27,8 @@
     align-items: center;
 }
 
-.feature-grid {
+.feature-grid,
+.reports-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.5rem;
